@@ -1,0 +1,50 @@
+@charset "utf-8";
+/* CSS Document */
+	*{margin: 0;padding: 0;outline: none;border: none;box-sizing: border-box;}
+
+
+			.top{
+					 		 height: 39px;						/*导航栏宽高背景*/
+					 		 width: 100%;
+					 		 margin-left: 0;
+					 		 background:#c1cbd7;
+					 		 position: fixed;  					/*在顶部相对位置*/
+					 		 margin-top: 0px;
+							 } 
+
+			.top ul{
+							 width: auto;
+							 list-style-type: none;
+							 white-space: nowrap;
+							 overflow: hidden;
+							 margin-left: 18.5%;
+							 margin-top: 3px;
+							 padding: 0;
+							 }
+
+			.top li{
+							 float:left;
+							 color: black;
+							 font-family:"宋体";
+							 margin-right: 13%;				/*设置p元素的右外边距*/
+							 overflow: hidden;				/*内容溢出元素框时会被修剪，并且其余内容是不可见的*/
+							 padding: 5px 0px;
+							 }
+
+			.top li a{								/*设置链接内容显示的格式*/
+							 display: block;				/*链接显示为块元素，整个链接区域都可点击*/
+							 color:white;					
+							 text-align: center;
+							 padding: 3px;
+							 overflow: hidden;
+							 text-decoration: none;		/*去除下划线*/
+							 }
+
+			.top li a:hover{
+							 background-color:gainsboro;		/*一级菜单-选中时背景变色*/
+							 }
+
+			.top li a:active{
+							 background-color:lightgray;		/*一级菜单-鼠标按下时一瞬间的背景属性*/
+							 }  
+

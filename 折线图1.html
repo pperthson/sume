@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh">
+	<head>
+		<meta charset="utf-8">
+		<title>夏日限定</title>
+		<style>
+			.boxOne{
+					width:580px;
+					height: 380px;
+					background-color: whitesmoke;
+					float: left;
+					margin-left: 40px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="boxOne"></div>
+		<script src="js/echarts.min.js"></script>
+		<script>
+			//	初始化	echarts.init(dom容器);
+			var myChart = echarts.init(document.querySelector(".boxOne"));
+			//指定配置项和数据
+			var option = {	
+							//设置线条颜色
+							color:['powderblue'],
+							//图表标题
+							 title: {
+								text: '2018年7月全平台网剧热度指数排行榜（《镇魂》）'
+							},
+							//图表的提示框组件
+							tooltip: {
+								trigger:'axis'
+							},
+						
+							grid:{
+								left:'6%',
+								right:'4%',
+								bottom:'8%',
+							},
+				
+							//X轴的相关配置
+							xAxis: {
+								type: 'category',
+								boundaryGap: false,
+								data: ['镇魂', '沙海', '延禧攻略', '快把我哥带走', '芸汐传', '萌妃驾到', '钟馗捉妖记','重返20岁']
+							},
+							//Y轴的相关配置
+							yAxis: {
+								type: 'value'
+							},
+							//系列图表配置，决定显示图表的类型
+							series: [{
+								data: [85.72, 80.23, 75.78, 69.11, 68.10, 62.60, 59.44,59.44],
+								type: 'line',
+								areaStyle: {}      							 /*阴影设置*/
+							}]
+						};
+
+			//把配置项给实例对象
+			myChart.setOption(option);
+
+		</script>
+	</body>
+</html>

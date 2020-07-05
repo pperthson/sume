@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh">
+	<head>
+		<meta charset="utf-8">
+		<title>夏日限定</title>
+		<style>
+			.boxOne{
+				width:580px;
+				height: 380px;
+				background-color: whitesmoke;
+				float: left;
+				margin-left: 40px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="boxOne"></div>
+		<script src="js/echarts.min.js"></script>
+		<script>
+			//	初始化	echarts.init(dom容器);
+			var myChart = echarts.init(document.querySelector(".boxOne"));
+			//指定配置项和数据
+			var option = {	 
+							  color:['royalblue','forestgreen','darkcyan','mediumpurple','lightblue'],
+							  title: {
+								text: '演员角色热度占比（《陈情令》）',
+								left:260,
+								top:20
+							},
+							 tooltip: {
+								trigger: 'item',
+								formatter: '{a} <br/>{b}: {c} ({d}%)'
+							},
+							legend: {
+								orient: 'vertical',
+								left: 10,
+								data: ['魏无羡（肖战）', '蓝忘机（王一博）', '江澄（汪卓成）','温情','其他演员']
+							},
+							series: [
+								{
+									name: '热度占比',
+									type: 'pie',
+									radius: ['50%', '70%'],
+									avoidLabelOverlap: false,
+									label: {
+										show: false,
+										position: 'center'
+									},
+									emphasis: {
+										label: {
+											show: true,
+											fontSize: '25',
+											fontWeight: 'normal'
+										}
+									},
+									labelLine: {
+										show: false
+									},
+									data: [
+										{value: 33.30, name: '魏无羡（肖战）'},
+										{value: 15.80, name: '蓝忘机（王一博）'},
+										{value: 11.80, name: '江澄（汪卓成）'},
+										{value: 8.30, name: '温情'},
+										{value: 30.80, name: '其他演员'}
+									]
+								}
+							]
+
+						};
+
+			//把配置项给实例对象
+			myChart.setOption(option);
+
+		</script>
+	</body>
+</html>

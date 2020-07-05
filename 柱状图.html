@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="zh">
+	<head>
+		<meta charset="utf-8">
+		<title>夏日限定</title>
+		<style>
+			.boxOne{
+				width:800px;
+				height: 430px;
+				background-color: whitesmoke;
+				margin-left: 70px;
+				margin-bottom: 20px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="boxOne"></div>
+		<script src="js/echarts.min.js"></script>
+		<script>
+			//	初始化	echarts.init(dom容器);
+			var myChart = echarts.init(document.querySelector(".boxOne"));
+			//指定配置项和数据
+			var option = {	
+							color:['skyblue','yellowgreen'],
+							title: {
+								text: '受众年龄分布占比',
+								subtext: '（百分比%）'
+							},
+							tooltip: {
+								trigger: 'axis'
+							},
+							legend: {
+								data: ['镇魂', '陈情令']
+							},
+							toolbox: {
+								show: true,
+								feature: {
+									dataView: {show: true, readOnly: false},
+									magicType: {show: true, type: ['line', 'bar']},
+									restore: {show: true},
+									saveAsImage: {show: true}
+								}
+							},
+							calculable: true,
+							xAxis: [
+								{
+									type: 'category',
+									data: ['0-17岁', '18-24岁', '25-34岁', '35-44岁', '45岁及以上']
+								}
+							],
+							yAxis: [
+								{
+									type: 'value'
+								}
+							],
+							series: [
+								{
+									name: '镇魂',
+									type: 'bar',
+									data: [1.30, 51.10, 41.90, 4.50,1.20 ],
+									markPoint: {
+										data: [
+											{type: 'max', name: '最大值'},
+											{type: 'min', name: '最小值'}
+										]
+									},
+									markLine: {
+										data: [
+											{type: 'average', name: '平均值'}
+										]
+									}
+								},
+								{
+									name: '陈情令',
+									type: 'bar',
+									data: [1.20, 43.41, 49.66, 4.57,1.16],
+									markPoint: {
+										data: [
+											{type: 'max', name: '最大值'},
+											{type: 'min', name: '最小值'}
+										]
+									},
+									markLine: {
+										data: [
+											{type: 'average', name: '平均值'}
+										]
+									}
+								}
+							]
+						};
+
+			//把配置项给实例对象
+			myChart.setOption(option);
+
+		</script>
+	</body>
+</html>
